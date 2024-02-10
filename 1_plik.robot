@@ -5,6 +5,8 @@ Library     SeleniumLibrary
 
 *** Test Cases ***
 Log in Wikipedia
-    Open Browser  https://www.google.com/
-    sleep   5
+    Open Browser  https://pl.wikipedia.org   chrome
+    sleep   1
+    click element  id:pt-login-2
+    sleep   3
     Close Browser
