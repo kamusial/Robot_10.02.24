@@ -1,71 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240210 11:34:57.704" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240210 12:16:50.081" rpa="false" schemaversion="4">
 <suite id="s1" name="1 Plik" source="C:\Users\vdi-student\Desktop\Robot_10.02.24\1_plik.robot">
 <test id="s1-t1" name="Log in Wikipedia" line="7">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://pl.wikipedia.org</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240210 11:34:57.951" level="INFO">Opening browser 'chrome' to base url 'https://pl.wikipedia.org'.</msg>
-<status status="PASS" starttime="20240210 11:34:57.950" endtime="20240210 11:34:59.634"/>
+<msg timestamp="20240210 12:16:50.303" level="INFO">Opening browser 'chrome' to base url 'https://pl.wikipedia.org'.</msg>
+<status status="PASS" starttime="20240210 12:16:50.302" endtime="20240210 12:16:51.995"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240210 11:35:00.636" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240210 11:34:59.635" endtime="20240210 11:35:00.636"/>
+<msg timestamp="20240210 12:16:52.997" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240210 12:16:51.996" endtime="20240210 12:16:52.997"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id:pt-login-2</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240210 11:35:00.637" level="INFO">Clicking element 'id:pt-login-2'.</msg>
-<status status="PASS" starttime="20240210 11:35:00.636" endtime="20240210 11:35:01.563"/>
+<msg timestamp="20240210 12:16:52.998" level="INFO">Clicking element 'id:pt-login-2'.</msg>
+<status status="PASS" starttime="20240210 12:16:52.997" endtime="20240210 12:16:54.037"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240210 11:35:02.564" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240210 11:35:01.564" endtime="20240210 11:35:02.564"/>
+<msg timestamp="20240210 12:16:55.039" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240210 12:16:54.037" endtime="20240210 12:16:55.039"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:wpName1</arg>
-<arg>RobotTests</arg>
+<arg>locator=id:wpName1</arg>
+<arg>text=RobotTests</arg>
+<arg>clear=False</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240210 11:35:02.565" level="INFO">Typing text 'RobotTests' into text field 'id:wpName1'.</msg>
-<status status="PASS" starttime="20240210 11:35:02.564" endtime="20240210 11:35:02.644"/>
+<msg timestamp="20240210 12:16:55.040" level="INFO">Typing text 'RobotTests' into text field 'id:wpName1'.</msg>
+<status status="PASS" starttime="20240210 12:16:55.040" endtime="20240210 12:16:55.089"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:wpPassword1</arg>
 <arg>RobotFramework</arg>
+<arg>False</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240210 11:35:02.645" level="INFO">Typing text 'RobotFramework' into text field 'id:wpPassword1'.</msg>
-<status status="PASS" starttime="20240210 11:35:02.645" endtime="20240210 11:35:02.740"/>
+<msg timestamp="20240210 12:16:55.090" level="INFO">Typing text 'RobotFramework' into text field 'id:wpPassword1'.</msg>
+<status status="PASS" starttime="20240210 12:16:55.090" endtime="20240210 12:16:55.156"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240210 11:35:05.742" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240210 11:35:02.741" endtime="20240210 11:35:05.742"/>
+<msg timestamp="20240210 12:16:58.159" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240210 12:16:55.157" endtime="20240210 12:16:58.159"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
+<arg>id:wpRemember</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<msg timestamp="20240210 12:16:58.160" level="INFO">Verifying checkbox 'id:wpRemember' is not selected.</msg>
+<status status="PASS" starttime="20240210 12:16:58.160" endtime="20240210 12:16:58.201"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:wpRemember</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20240210 12:16:58.202" level="INFO">Selecting checkbox 'id:wpRemember'.</msg>
+<status status="PASS" starttime="20240210 12:16:58.201" endtime="20240210 12:16:58.273"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240210 12:16:59.276" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240210 12:16:58.274" endtime="20240210 12:16:59.276"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id:wpLoginAttempt</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240210 11:35:05.743" level="INFO">Clicking button 'id:wpLoginAttempt'.</msg>
-<status status="PASS" starttime="20240210 11:35:05.742" endtime="20240210 11:35:10.622"/>
+<msg timestamp="20240210 12:16:59.277" level="INFO">Clicking button 'id:wpLoginAttempt'.</msg>
+<status status="PASS" starttime="20240210 12:16:59.276" endtime="20240210 12:17:03.865"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:search</arg>
+<arg>TEXTTTT</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240210 12:17:03.866" level="INFO">Typing text 'TEXTTTT' into text field 'name:search'.</msg>
+<status status="PASS" starttime="20240210 12:17:03.865" endtime="20240210 12:17:03.945"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="searchform"]/div/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240210 12:17:03.946" level="INFO">Clicking button '//*[@id="searchform"]/div/button'.</msg>
+<status status="PASS" starttime="20240210 12:17:03.945" endtime="20240210 12:17:05.050"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
+<arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240210 11:35:13.624" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240210 11:35:10.623" endtime="20240210 11:35:13.624"/>
+<msg timestamp="20240210 12:17:06.052" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240210 12:17:05.051" endtime="20240210 12:17:06.052"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240210 11:35:13.625" endtime="20240210 11:35:15.716"/>
+<status status="PASS" starttime="20240210 12:17:06.052" endtime="20240210 12:17:08.156"/>
 </kw>
-<status status="PASS" starttime="20240210 11:34:57.949" endtime="20240210 11:35:15.716"/>
+<status status="PASS" starttime="20240210 12:16:50.301" endtime="20240210 12:17:08.156"/>
 </test>
-<status status="PASS" starttime="20240210 11:34:57.705" endtime="20240210 11:35:15.718"/>
+<status status="PASS" starttime="20240210 12:16:50.083" endtime="20240210 12:17:08.158"/>
 </suite>
 <statistics>
 <total>
