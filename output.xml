@@ -1,41 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240211 14:50:39.970" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240211 15:01:16.054" rpa="false" schemaversion="4">
 <suite id="s1" name="3 Api" source="C:\Users\vdi-student\Robot_10.02.24\3_api.robot">
 <test id="s1-t1" name="APT_GET_TEST" line="6">
 <kw name="GET" library="RequestsLibrary">
 <var>${get_odpowiedz}</var>
-<arg>https://simple-books-api.glitch.me/status</arg>
+<arg>https://simple-books-api.glitch.me/statusas</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20240211 14:50:40.688" level="INFO">GET Request : url=https://simple-books-api.glitch.me/status 
- path_url=/status 
+<msg timestamp="20240211 15:01:16.734" level="INFO">GET Request : url=https://simple-books-api.glitch.me/statusas 
+ path_url=/statusas 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20240211 14:50:40.688" level="INFO">GET Response : url=https://simple-books-api.glitch.me/status 
- status=200, reason=OK 
- headers={'Date': 'Sun, 11 Feb 2024 13:47:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '15', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'etag': 'W/"f-v/Y1JusChTxrQUzPtNAKycooOTA"'} 
- body={"status":"OK"} 
+<msg timestamp="20240211 15:01:16.735" level="INFO">GET Response : url=https://simple-books-api.glitch.me/statusas 
+ status=404, reason=Not Found 
+ headers={'Date': 'Sun, 11 Feb 2024 13:58:03 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '147', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'content-security-policy': "default-src 'none'", 'x-content-type-options': 'nosniff'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;pre&gt;Cannot GET /statusas&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
  </msg>
-<msg timestamp="20240211 14:50:40.688" level="INFO">${get_odpowiedz} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20240211 14:50:40.109" endtime="20240211 14:50:40.688"/>
+<msg timestamp="20240211 15:01:16.735" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://simple-books-api.glitch.me/statusas</msg>
+<status status="FAIL" starttime="20240211 15:01:16.174" endtime="20240211 15:01:16.749"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${get_odpowiedz}</arg>
+<arg>${get_odpowiedz.json()}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240211 14:50:40.689" endtime="20240211 14:50:40.689"/>
+<status status="NOT RUN" starttime="20240211 15:01:16.750" endtime="20240211 15:01:16.750"/>
 </kw>
-<status status="PASS" starttime="20240211 14:50:40.109" endtime="20240211 14:50:40.690"/>
+<status status="FAIL" starttime="20240211 15:01:16.173" endtime="20240211 15:01:16.750">HTTPError: 404 Client Error: Not Found for url: https://simple-books-api.glitch.me/statusas</status>
 </test>
-<status status="PASS" starttime="20240211 14:50:39.972" endtime="20240211 14:50:40.691"/>
+<status status="FAIL" starttime="20240211 15:01:16.055" endtime="20240211 15:01:16.751"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="3 Api">3 Api</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="3 Api">3 Api</stat>
 </suite>
 </statistics>
 <errors>
