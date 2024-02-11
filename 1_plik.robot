@@ -18,7 +18,7 @@ Login to wikipedia
     click element  id:pt-login-2
 #    sleep   1
     input text  locator=id:wpName1  text=${moj login}  clear=False
-    input text   id:wpPassword1   ${moje haslo}  False
+    input password   id:wpPassword1   ${moje haslo}  False
 #    sleep   3
     checkbox should not be selected  id:wpRemember
     select checkbox    id:wpRemember
@@ -33,7 +33,7 @@ Successful login
 
 U n
     Login to wikipedia  ${wikipedia login}   ${not proper password}
-    sleep  30
+    sleep  3
     ${my_message}   get text  xpath://*[@id="userloginForm"]/form/div[1]/div
     Should Be Equal As Strings    ${my_message}       ${error_message}
 
