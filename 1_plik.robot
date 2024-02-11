@@ -1,10 +1,13 @@
 *** Settings ***
 Library     SeleniumLibrary
+Test Setup      Open Browser  https://pl.wikipedia.org   chrome
+Test Teardown   close browser
 
 *** Variables ***
 ${wikipedia login}   RobotTests
 ${proper password}   RobotFramework
 ${not proper password}   12345
+${error_message}   Wystąpił problem z wprowadzonymi danymi
 
 *** Keywords ***
 Login to wikipedia
@@ -24,22 +27,18 @@ Login to wikipedia
 
 *** Test Cases ***
 Successful login
-    Open Browser  https://pl.wikipedia.org   chrome  #executable_path=C:\Users\vdi-student\Desktop\Robot_10.02.24
     Login to wikipedia   ${wikipedia login}  ${proper password}
-    sleep  3
+    sleep  2
     wait until element is visible  xpath://*[@id="ca-nstab-project"]/a/span   5
-    close browser
 
-Unsuccessful login
-    Open Browser  https://pl.wikipedia.org   chrome  #executable_path=C:\Users\vdi-student\Desktop\Robot_10.02.24
+U n
     Login to wikipedia  ${wikipedia login}   ${not proper password}
-    close browser
-#dalsza czesc kodu
+    sleep  30
+    ${my_message}   get text  xpath://*[@id="userloginForm"]/form/div[1]/div
+    Should Be Equal As Strings    ${my_message}       ${error_message}
 
 Find in Wikipedia
-    Open Browser  https://pl.wikipedia.org   chrome  #executable_path=C:\Users\vdi-student\Desktop\Robot_10.02.24
     input text   name:search   o co z bitcoinem chodzi
     press keys  name:search  ENTER
 #    click button    //*[@id="searchform"]/div/button
 #    sleep   1
-    Close Browser
