@@ -9,7 +9,6 @@ ${not proper password}   12345
 *** Keywords ***
 Login to wikipedia
     [Arguments]  ${moj login}  ${moje haslo}
-    Open Browser  https://pl.wikipedia.org   chrome  #executable_path=C:\Users\vdi-student\Desktop\Robot_10.02.24
     run keyword and ignore error   click element   id:L2AGLb
     wait until element is visible    id:pt-login-2   timeout=5
 #    sleep   1
@@ -25,17 +24,20 @@ Login to wikipedia
 
 *** Test Cases ***
 Successful login
+    Open Browser  https://pl.wikipedia.org   chrome  #executable_path=C:\Users\vdi-student\Desktop\Robot_10.02.24
     Login to wikipedia   ${wikipedia login}  ${proper password}
+    sleep  3
     wait until element is visible  xpath://*[@id="ca-nstab-project"]/a/span   5
+    close browser
 
 Unsuccessful login
+    Open Browser  https://pl.wikipedia.org   chrome  #executable_path=C:\Users\vdi-student\Desktop\Robot_10.02.24
     Login to wikipedia  ${wikipedia login}   ${not proper password}
+    close browser
 #dalsza czesc kodu
 
-
-
 Find in Wikipedia
-    Login to wikipedia
+    Open Browser  https://pl.wikipedia.org   chrome  #executable_path=C:\Users\vdi-student\Desktop\Robot_10.02.24
     input text   name:search   o co z bitcoinem chodzi
     press keys  name:search  ENTER
 #    click button    //*[@id="searchform"]/div/button
