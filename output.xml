@@ -1,100 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240210 14:12:01.516" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240211 09:14:09.502" rpa="false" schemaversion="4">
 <suite id="s1" name="1 Plik" source="C:\Users\vdi-student\Desktop\Robot_10.02.24\1_plik.robot">
-<test id="s1-t1" name="Log in Wikipedia" line="10">
+<test id="s1-t1" name="Successful login" line="27">
+<kw name="Login to wikipedia">
+<arg>Kamil</arg>
+<arg>WSB</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://pl.wikipedia.org</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240210 14:12:01.734" level="INFO">Opening browser 'chrome' to base url 'https://pl.wikipedia.org'.</msg>
-<status status="PASS" starttime="20240210 14:12:01.733" endtime="20240210 14:12:03.360"/>
+<msg timestamp="20240211 09:14:09.719" level="INFO">Opening browser 'chrome' to base url 'https://pl.wikipedia.org'.</msg>
+<status status="PASS" starttime="20240211 09:14:09.719" endtime="20240211 09:14:11.384"/>
 </kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>click element</arg>
+<arg>id:L2AGLb</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id:L2AGLb</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240210 14:12:03.361" level="INFO">Clicking element 'id:L2AGLb'.</msg>
-<msg timestamp="20240210 14:12:03.485" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240210 14:12:03.485" level="FAIL">Element with locator 'id:L2AGLb' not found.</msg>
-<status status="FAIL" starttime="20240210 14:12:03.360" endtime="20240210 14:12:03.488"/>
+<msg timestamp="20240211 09:14:11.386" level="INFO">Clicking element 'id:L2AGLb'.</msg>
+<msg timestamp="20240211 09:14:11.514" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240211 09:14:11.515" level="FAIL">Element with locator 'id:L2AGLb' not found.</msg>
+<status status="FAIL" starttime="20240211 09:14:11.385" endtime="20240211 09:14:11.517"/>
+</kw>
+<status status="PASS" starttime="20240211 09:14:11.385" endtime="20240211 09:14:11.517"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>id:pt-login-2</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.489" endtime="20240210 14:12:03.489"/>
+<status status="PASS" starttime="20240211 09:14:11.517" endtime="20240211 09:14:11.544"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id:pt-login-2</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.489" endtime="20240210 14:12:03.489"/>
+<msg timestamp="20240211 09:14:11.545" level="INFO">Clicking element 'id:pt-login-2'.</msg>
+<status status="PASS" starttime="20240211 09:14:11.544" endtime="20240211 09:14:12.606"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>locator=id:wpName1</arg>
-<arg>text=${wikipedia login}</arg>
+<arg>text=${moj login}</arg>
 <arg>clear=False</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.489" endtime="20240210 14:12:03.489"/>
+<msg timestamp="20240211 09:14:12.607" level="INFO">Typing text 'Kamil' into text field 'id:wpName1'.</msg>
+<status status="PASS" starttime="20240211 09:14:12.606" endtime="20240211 09:14:12.674"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:wpPassword1</arg>
-<arg>${proper password}</arg>
+<arg>${moje haslo}</arg>
 <arg>False</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.489" endtime="20240210 14:12:03.490"/>
+<msg timestamp="20240211 09:14:12.675" level="INFO">Typing text 'WSB' into text field 'id:wpPassword1'.</msg>
+<status status="PASS" starttime="20240211 09:14:12.674" endtime="20240211 09:14:12.737"/>
 </kw>
 <kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
 <arg>id:wpRemember</arg>
 <doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.490" endtime="20240210 14:12:03.490"/>
+<msg timestamp="20240211 09:14:12.738" level="INFO">Verifying checkbox 'id:wpRemember' is not selected.</msg>
+<status status="PASS" starttime="20240211 09:14:12.738" endtime="20240211 09:14:12.774"/>
 </kw>
 <kw name="Select Checkbox" library="SeleniumLibrary">
 <arg>id:wpRemember</arg>
 <doc>Selects the checkbox identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.490" endtime="20240210 14:12:03.490"/>
+<msg timestamp="20240211 09:14:12.775" level="INFO">Selecting checkbox 'id:wpRemember'.</msg>
+<status status="PASS" starttime="20240211 09:14:12.775" endtime="20240211 09:14:12.850"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id:wpLoginAttempt</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.490" endtime="20240210 14:12:03.490"/>
+<msg timestamp="20240211 09:14:12.850" level="INFO">Clicking button 'id:wpLoginAttempt'.</msg>
+<status status="PASS" starttime="20240211 09:14:12.850" endtime="20240211 09:14:14.114"/>
 </kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.491" endtime="20240210 14:12:03.491"/>
+<status status="PASS" starttime="20240211 09:14:09.718" endtime="20240211 09:14:14.114"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>id:vector-user-links-dropdown-checkbox</arg>
+<arg>xpath://*[@id="ca-nstab-project"]/a/span</arg>
 <arg>5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.491" endtime="20240210 14:12:03.491"/>
+<msg timestamp="20240211 09:14:19.206" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240211 09:14:19.207" level="FAIL">Element 'xpath://*[@id="ca-nstab-project"]/a/span' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20240211 09:14:14.115" endtime="20240211 09:14:19.207"/>
+</kw>
+<status status="FAIL" starttime="20240211 09:14:09.717" endtime="20240211 09:14:19.208">Element 'xpath://*[@id="ca-nstab-project"]/a/span' not visible after 5 seconds.</status>
+</test>
+<test id="s1-t2" name="Unsuccessful login" line="31">
+<kw name="Login to wikipedia">
+<msg timestamp="20240211 09:14:19.210" level="FAIL">Keyword 'Login to wikipedia' expected 2 arguments, got 0.</msg>
+<status status="FAIL" starttime="20240211 09:14:19.210" endtime="20240211 09:14:19.210"/>
+</kw>
+<status status="FAIL" starttime="20240211 09:14:19.209" endtime="20240211 09:14:19.210">Keyword 'Login to wikipedia' expected 2 arguments, got 0.</status>
+</test>
+<test id="s1-t3" name="Find in Wikipedia" line="37">
+<kw name="Login to wikipedia">
+<msg timestamp="20240211 09:14:19.213" level="FAIL">Keyword 'Login to wikipedia' expected 2 arguments, got 0.</msg>
+<status status="FAIL" starttime="20240211 09:14:19.213" endtime="20240211 09:14:19.213"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name:search</arg>
-<arg>TEXTTTT</arg>
+<arg>o co z bitcoinem chodzi</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.492" endtime="20240210 14:12:03.492"/>
+<status status="NOT RUN" starttime="20240211 09:14:19.213" endtime="20240211 09:14:19.213"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>name:search</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.492" endtime="20240210 14:12:03.492"/>
+<status status="NOT RUN" starttime="20240211 09:14:19.213" endtime="20240211 09:14:19.213"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240210 14:12:03.492" endtime="20240210 14:12:03.492"/>
+<status status="NOT RUN" starttime="20240211 09:14:19.213" endtime="20240211 09:14:19.214"/>
 </kw>
-<status status="FAIL" starttime="20240210 14:12:01.733" endtime="20240210 14:12:03.493">Element with locator 'id:L2AGLb' not found.</status>
+<status status="FAIL" starttime="20240211 09:14:19.212" endtime="20240211 09:14:19.214">Keyword 'Login to wikipedia' expected 2 arguments, got 0.</status>
 </test>
-<status status="FAIL" starttime="20240210 14:12:01.517" endtime="20240210 14:12:03.494"/>
+<status status="FAIL" starttime="20240211 09:14:09.503" endtime="20240211 09:14:19.215"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="1 Plik">1 Plik</stat>
+<stat pass="0" fail="3" skip="0" id="s1" name="1 Plik">1 Plik</stat>
 </suite>
 </statistics>
 <errors>
